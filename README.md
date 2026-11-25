@@ -26,12 +26,3 @@ requirements.txt               Versiones exactas con las que se guardaron los mo
 pip install -r requirements.txt
 streamlit run app.py
 ```
-
-## Despliegue en Streamlit Community Cloud
-
-1. Crear un repositorio en GitHub y subir el contenido de esta carpeta (incluida `.streamlit/`).
-2. En share.streamlit.io: New app, elegir el repositorio, archivo principal `app.py`.
-3. En *Advanced settings* elegir Python 3.13.
-
-Si se vuelve a ejecutar el notebook y se reemplazan los archivos de `modelos/`, hay que poner en
-`requirements.txt` las versiones de scikit-learn, numpy y pandas con las que se ejecutó.
