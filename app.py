@@ -26,9 +26,11 @@ TEXTO, TEXTO_SEC = '#1C2B33', '#56656D'
 PRIMARIO = '#0E4F5C'
 ACENTO = '#C4572F'
 COLOR_MODELO = {'Gradient Boosting optimizado': '#0E4F5C', 'Random Forest optimizado': '#7FA9B3',
-                'Ridge optimizado': '#D49A3A'}
+                'Regresión lineal': '#D49A3A'}
 NOMBRE_CORTO = {'Gradient Boosting optimizado': 'Gradient Boosting', 'Random Forest optimizado': 'Random Forest',
-                'Ridge optimizado': 'Ridge'}
+                'Regresión lineal': 'Regresión lineal'}
+# Modelos que se presentan en la app (el notebook compara más; aquí se dejan los tres principales)
+MODELOS_APP = list(COLOR_MODELO)
 
 st.markdown(
     """
@@ -284,7 +286,7 @@ def obtener_modelos():
     return {nombre: joblib.load(CARPETA_MODELOS / f'{archivo}.joblib')
             for archivo, nombre in [('gradient_boosting', 'Gradient Boosting optimizado'),
                                     ('random_forest', 'Random Forest optimizado'),
-                                    ('ridge', 'Ridge optimizado')]}
+                                    ('regresion_lineal', 'Regresión lineal')]}
 
 
 @st.cache_data
@@ -329,8 +331,8 @@ with st.container(key='encabezado'):
     with c_nav:
         seccion = st.radio('Secciones', SECCIONES, horizontal=True, label_visibility='collapsed', key='seccion')
 
-cv = pd.DataFrame(resultados['cv'])
-test = pd.DataFrame(resultados['test'])
+cv = pd.DataFrame(resultados['cv']).query('Modelo in @MODELOS_APP').reset_index(drop=True)
+test = pd.DataFrame(resultados['test']).query('Modelo in @MODELOS_APP').reset_index(drop=True)
 MEJOR = resultados['mejor_modelo']
 fila_mejor = test[test['Modelo'] == MEJOR].iloc[0]
 
@@ -410,8 +412,8 @@ if seccion == 'Proyecto':
         <p>Modelo base interpretable: coeficientes con valores-p, R², R² ajustada y MSE. Los tres métodos dan los
         mismos coeficientes.</p></div></article>
       <article><span class="num">04</span><div><h3>Machine Learning</h3>
-        <div class="sub">Ridge · Lasso · KNN · Random Forest · SVR · Gradient Boosting</div>
-        <p>Hiperparámetros optimizados con validación cruzada agrupada por vivienda (GroupKFold) y evaluación final,
+        <div class="sub">Regresión lineal · Random Forest · Gradient Boosting</div>
+        <p>La regresión lineal es la referencia; Random Forest y Gradient Boosting son modelos de árboles. Hiperparámetros optimizados con validación cruzada agrupada por vivienda (GroupKFold) y evaluación final,
         una sola vez, en el conjunto de prueba.</p></div></article>
     </div>
     """)
@@ -742,8 +744,7 @@ elif seccion == 'Modelos':
     with st.container(key='grafica'):
         metrica = st.radio('Métrica', ['R2', 'RMSE', 'MAE'], horizontal=True,
                            format_func=lambda m: {'R2': 'R²', 'RMSE': 'RMSE', 'MAE': 'MAE'}[m])
-        datos_g = test[test['Modelo'] != 'Dummy Regressor'] if metrica == 'R2' else test
-        barras = alt.Chart(datos_g).mark_bar(cornerRadiusEnd=4).encode(
+        barras = alt.Chart(test).mark_bar(cornerRadiusEnd=4).encode(
             y=alt.Y('Modelo:N', sort=alt.EncodingSortField(metrica, order='descending' if metrica == 'R2' else 'ascending'),
                     title=None, axis=alt.Axis(labelLimit=320)),
             x=alt.X(f'{metrica}:Q', title=f'{metrica} en Test' if metrica != 'R2' else 'R² en Test',
@@ -754,8 +755,10 @@ elif seccion == 'Modelos':
 
     tabla_metricas(cv, 'Validación cruzada en entrenamiento', 'Promedio de 5 particiones; criterio de selección')
     hp = resultados['hiperparametros']
-    filas_hp = pd.DataFrame([{'Modelo': m, 'Hiperparámetros': ', '.join(f'{k.replace("model__", "")} = {v}'
-                                                                         for k, v in p.items())} for m, p in hp.items()])
+    filas_hp = pd.DataFrame([{'Modelo': 'Regresión lineal', 'Hiperparámetros': 'No tiene; se ajusta por mínimos cuadrados'}]
+                            + [{'Modelo': m, 'Hiperparámetros': ', '.join(f'{k.replace("model__", "")} = {v}'
+                                                                           for k, v in p.items())}
+                               for m, p in hp.items() if m in MODELOS_APP])
     html('<h2 class="seccion" style="margin-top: 36px">Hiperparámetros seleccionados</h2>')
     tabla_html(filas_hp, fuerte=['Modelo'])
 
@@ -805,6 +808,7 @@ elif seccion == 'Modelos':
             y=alt.Y('Variable:N', sort='-x', title=None, axis=alt.Axis(labelLimit=320)),
             x=alt.X('Caída de R²:Q', title=None),
             tooltip=['Variable', alt.Tooltip('Caída de R²:Q', format='.4f')])
+        barras_imp = barras_imp.properties(padding={'left': 24, 'right': 8, 'top': 5, 'bottom': 5})
         st.altair_chart(base_grafica(barras_imp, 420), width='stretch', theme=None)
 
 
@@ -911,7 +915,6 @@ elif seccion == 'Predicción':
 else:
     ols = resultados['ols']
     lineal = test[test['Modelo'] == 'Regresión lineal'].iloc[0]
-    practica = test[test['Modelo'] == 'Regresión lineal (5 variables de la práctica)'].iloc[0]
     anova = pd.DataFrame(resultados['anova']).set_index('Factor')
     corr = pd.DataFrame(resultados['correlaciones']).set_index('Variable')
     imp = pd.DataFrame(resultados['importancias'])
@@ -928,8 +931,8 @@ else:
       <li><b>Ubicación.</b> La mediana del precio cambia varias veces de un código postal a otro. En el modelo seleccionado,
       las variables más importantes son {top_imp}.</li>
       <li><b>Regresión lineal.</b> Con 15 variables numéricas el modelo lineal explica R² = {ols['r2']:.3f} del precio en
-      entrenamiento. Al agregar el código postal, la regresión lineal sube a R² = {lineal['R2']:.3f} en Test, frente a
-      {practica['R2']:.3f} del modelo con las 5 variables de la práctica.</li>
+      entrenamiento. Al agregar el código postal, la regresión lineal llega a R² = {lineal['R2']:.3f} en Test, pero queda
+      por debajo de los modelos de árboles, que captan relaciones no lineales entre ubicación, tamaño y precio.</li>
       <li><b>Mejor modelo.</b> {MEJOR}: R² = {fila_mejor['R2']:.3f}, RMSE = {fila_mejor['RMSE']:,.0f} USD y
       MAE = {fila_mejor['MAE']:,.0f} USD en Test, el menor error de todos los modelos comparados.</li>
     </ol>
