@@ -439,7 +439,7 @@ elif seccion == 'Datos':
          '<p class="texto">Cómo se cubre cada requisito del Caso 2 con las columnas del dataset.</p>')
     diccionario = pd.DataFrame([
         ('Superficie', 'superficie_m2, terreno_m2', 'Construcción y terreno, convertidos de ft² a m² (× 0.092903)'),
-        ('Habitaciones', 'habitaciones, banos, pisos', 'Distribución de la vivienda'),
+        ('Habitaciones', 'habitaciones, baños, pisos', 'Distribución de la vivienda'),
         ('Ubicación geográfica', 'latitud, longitud, codigo_postal', '70 códigos postales del condado'),
         ('Entorno', 'frente_agua, vista, superficie_vecinos_m2', 'Frente al lago, calidad de la vista y tamaño de las 15 casas vecinas'),
         ('Propiedad', 'calidad, condicion, antiguedad, renovada', 'Calidad de construcción (1 a 13), estado (1 a 5), años al venderse'),
@@ -673,12 +673,15 @@ elif seccion == 'Regresión':
         html('<div class="figura" style="border:0;padding:0;margin:0"><div class="cabeza" style="margin:0 0 8px">'
              '<b>Coeficientes estandarizados</b><span class="leyenda">Cambio en desviaciones estándar del precio por '
              'una desviación estándar de la variable</span></div></div>')
-        c_std = coef.dropna(subset=['Coef. estandarizado'])
+        # Altair interpreta el punto de 'Coef. estandarizado' como campo anidado; se renombra la columna
+        c_std = (coef.dropna(subset=['Coef. estandarizado'])
+                 .rename(columns={'Coef. estandarizado': 'coef_std'})[['Variable', 'coef_std']])
         barras = alt.Chart(c_std).mark_bar(cornerRadiusEnd=3).encode(
-            y=alt.Y('Variable:N', sort=alt.EncodingSortField('Coef. estandarizado', op='sum', order='descending'), title=None, axis=alt.Axis(labelLimit=320)),
-            x=alt.X('Coef. estandarizado:Q', title=None),
-            color=alt.condition('datum["Coef. estandarizado"] > 0', alt.value(PRIMARIO), alt.value(ACENTO)),
-            tooltip=['Variable', alt.Tooltip('Coef. estandarizado:Q', format='.4f')])
+            y=alt.Y('Variable:N', sort=alt.EncodingSortField('coef_std', op='sum', order='descending'), title=None, axis=alt.Axis(labelLimit=320)),
+            x=alt.X('coef_std:Q', title=None),
+            color=alt.condition('datum.coef_std > 0', alt.value(PRIMARIO), alt.value(ACENTO)),
+            tooltip=['Variable', alt.Tooltip('coef_std:Q', title='Coef. estandarizado', format='.4f')])
+        barras = barras.properties(padding={'left': 24, 'right': 8, 'top': 5, 'bottom': 5})  # evita recortar etiquetas largas
         st.altair_chart(base_grafica(barras, 420), width='stretch', theme=None)
 
     html('<h2 class="seccion" style="margin-top: 36px">Métricas y supuestos</h2>')
