@@ -1,0 +1,1157 @@
+{
+ "n_original": 21613,
+ "n_limpio": 21596,
+ "n_train": 17278,
+ "n_test": 4318,
+ "ids_repetidos": 177,
+ "mejor_modelo": "Gradient Boosting optimizado",
+ "cv": [
+  {
+   "Modelo": "Gradient Boosting optimizado",
+   "MAE": 67476.9258377711,
+   "MSE": 15052275199.17599,
+   "RMSE": 122470.5945705182,
+   "RMSE desv.": 7295.7977438891,
+   "R2": 0.888743564
+  },
+  {
+   "Modelo": "Gradient Boosting",
+   "MAE": 67191.0699740601,
+   "MSE": 15612812617.944561,
+   "RMSE": 124693.3485824189,
+   "RMSE desv.": 8023.8044123682,
+   "R2": 0.8846361442
+  },
+  {
+   "Modelo": "Random Forest optimizado",
+   "MAE": 67921.1693220788,
+   "MSE": 16046559401.23132,
+   "RMSE": 126507.4302427436,
+   "RMSE desv.": 6513.7926439741,
+   "R2": 0.8814055066
+  },
+  {
+   "Modelo": "Random Forest",
+   "MAE": 68606.9603884952,
+   "MSE": 16738840400.748394,
+   "RMSE": 129236.5946349072,
+   "RMSE desv.": 6061.6011021076,
+   "R2": 0.8760867372
+  },
+  {
+   "Modelo": "SVR optimizado",
+   "MAE": 68300.9023214911,
+   "MSE": 20144630420.07313,
+   "RMSE": 141187.8352016635,
+   "RMSE desv.": 14512.9463287452,
+   "R2": 0.8514943575
+  },
+  {
+   "Modelo": "KNN optimizado",
+   "MAE": 82592.3497055373,
+   "MSE": 24714423467.505554,
+   "RMSE": 157132.7429310944,
+   "RMSE desv.": 4870.7870468899,
+   "R2": 0.8169538236
+  },
+  {
+   "Modelo": "KNN",
+   "MAE": 83573.4633579286,
+   "MSE": 25744769079.68117,
+   "RMSE": 160342.6645969654,
+   "RMSE desv.": 5915.9943903152,
+   "R2": 0.8094195661
+  },
+  {
+   "Modelo": "Ridge optimizado",
+   "MAE": 96884.6561720472,
+   "MSE": 26441690106.677986,
+   "RMSE": 162405.8376825412,
+   "RMSE desv.": 8126.1302789255,
+   "R2": 0.8042643317
+  },
+  {
+   "Modelo": "Regresión lineal",
+   "MAE": 96881.5658887816,
+   "MSE": 26442314236.814686,
+   "RMSE": 162407.6012259992,
+   "RMSE desv.": 8129.2866127041,
+   "R2": 0.8042597125
+  },
+  {
+   "Modelo": "Ridge",
+   "MAE": 96915.0753090728,
+   "MSE": 26444098594.868767,
+   "RMSE": 162414.8347304902,
+   "RMSE desv.": 8094.4458943345,
+   "R2": 0.8042457707
+  },
+  {
+   "Modelo": "Lasso optimizado",
+   "MAE": 96882.6559216576,
+   "MSE": 26445335279.762764,
+   "RMSE": 162416.4823513788,
+   "RMSE desv.": 8137.6618488993,
+   "R2": 0.8042386069
+  },
+  {
+   "Modelo": "Lasso",
+   "MAE": 96942.287735013,
+   "MSE": 26549329676.35336,
+   "RMSE": 162734.2562354528,
+   "RMSE desv.": 8178.7238520043,
+   "R2": 0.8034715495
+  },
+  {
+   "Modelo": "Regresión lineal (5 variables de la práctica)",
+   "MAE": 146482.6065768265,
+   "MSE": 52362669053.50745,
+   "RMSE": 228731.6149489264,
+   "RMSE desv.": 6672.1343184571,
+   "R2": 0.6121272294
+  },
+  {
+   "Modelo": "SVR",
+   "MAE": 191121.2672203236,
+   "MSE": 123800141056.75012,
+   "RMSE": 351681.227711597,
+   "RMSE desv.": 10975.2053290133,
+   "R2": 0.0832655603
+  },
+  {
+   "Modelo": "Dummy Regressor",
+   "MAE": 233904.8095184214,
+   "MSE": 135031955289.93655,
+   "RMSE": 367315.0142365049,
+   "RMSE desv.": 10565.7752376618,
+   "R2": -0.0001756004
+  }
+ ],
+ "test": [
+  {
+   "Modelo": "Gradient Boosting optimizado",
+   "MAE": 67374.2702638086,
+   "MSE": 14814831953.03303,
+   "RMSE": 121716.1942924319,
+   "R2": 0.8893042004
+  },
+  {
+   "Modelo": "Random Forest optimizado",
+   "MAE": 67964.4139877869,
+   "MSE": 14951985423.835243,
+   "RMSE": 122278.311338664,
+   "R2": 0.8882793955
+  },
+  {
+   "Modelo": "SVR optimizado",
+   "MAE": 68113.1519607619,
+   "MSE": 20053764697.7346,
+   "RMSE": 141611.3155709479,
+   "R2": 0.8501591159
+  },
+  {
+   "Modelo": "KNN optimizado",
+   "MAE": 81788.9953605476,
+   "MSE": 24314459055.454533,
+   "RMSE": 155930.9432263351,
+   "R2": 0.8183233874
+  },
+  {
+   "Modelo": "Lasso optimizado",
+   "MAE": 98522.8239090892,
+   "MSE": 27182182613.12474,
+   "RMSE": 164870.1992875751,
+   "R2": 0.7968958779
+  },
+  {
+   "Modelo": "Ridge optimizado",
+   "MAE": 98531.24819291,
+   "MSE": 27194806646.85217,
+   "RMSE": 164908.4796086974,
+   "R2": 0.7968015516
+  },
+  {
+   "Modelo": "Regresión lineal",
+   "MAE": 98530.6625866036,
+   "MSE": 27196110480.819614,
+   "RMSE": 164912.432766058,
+   "R2": 0.7967918094
+  },
+  {
+   "Modelo": "Regresión lineal (5 variables de la práctica)",
+   "MAE": 143150.930146957,
+   "MSE": 49024773650.269905,
+   "RMSE": 221415.387112707,
+   "R2": 0.6336889588
+  },
+  {
+   "Modelo": "Dummy Regressor",
+   "MAE": 234492.3785245031,
+   "MSE": 133837310346.44754,
+   "RMSE": 365837.8197322518,
+   "R2": -2.67386e-05
+  }
+ ],
+ "cv_vs_test": [
+  {
+   "Métrica": "MAE",
+   "CV": 67476.9258377711,
+   "Test": 67374.2702638086
+  },
+  {
+   "Métrica": "MSE",
+   "CV": 15052275199.17599,
+   "Test": 14814831953.03303
+  },
+  {
+   "Métrica": "RMSE",
+   "CV": 122470.5945705182,
+   "Test": 121716.1942924319
+  },
+  {
+   "Métrica": "R2",
+   "CV": 0.888743564,
+   "Test": 0.8893042004
+  }
+ ],
+ "hiperparametros": {
+  "Ridge optimizado": {
+   "model__alpha": 0.1
+  },
+  "Lasso optimizado": {
+   "model__alpha": 10
+  },
+  "KNN optimizado": {
+   "model__n_neighbors": 7,
+   "model__weights": "distance"
+  },
+  "Random Forest optimizado": {
+   "model__n_estimators": 100,
+   "model__min_samples_split": 5,
+   "model__min_samples_leaf": 1,
+   "model__max_features": 0.6,
+   "model__max_depth": null
+  },
+  "SVR optimizado": {
+   "model__C": 1000000,
+   "model__epsilon": 25000,
+   "model__gamma": 0.03
+  },
+  "Gradient Boosting optimizado": {
+   "model__min_samples_leaf": 10,
+   "model__max_leaf_nodes": 31,
+   "model__max_iter": 300,
+   "model__learning_rate": 0.03,
+   "model__l2_regularization": 1.0
+  }
+ },
+ "ols": {
+  "r2": 0.6949311580739143,
+  "r2_aj": 0.694666065232477,
+  "f": 2621.4633118947754,
+  "f_p": 0.0,
+  "coeficientes": [
+   {
+    "Variable": "const",
+    "Coeficiente": -39924063.53714946,
+    "Error estándar": 1668490.656058947,
+    "t": -23.9282511965,
+    "valor-p": 1.647108438e-124,
+    "Coef. estandarizado": null,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "habitaciones",
+    "Coeficiente": -37923.9814058891,
+    "Error estándar": 2223.500310995,
+    "t": -17.055982056,
+    "valor-p": 1.069131857e-64,
+    "Coef. estandarizado": -0.0931995529,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "banos",
+    "Coeficiente": 40602.6268896635,
+    "Error estándar": 3647.7041150781,
+    "t": 11.1310088781,
+    "valor-p": 1.109701815e-28,
+    "Coef. estandarizado": 0.0849691327,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "superficie_m2",
+    "Coeficiente": 1824.1305062225,
+    "Error estándar": 41.1952585192,
+    "t": 44.2801082404,
+    "valor-p": 0.0,
+    "Coef. estandarizado": 0.4219399644,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "terreno_m2",
+    "Coeficiente": -0.2938997188,
+    "Error estándar": 0.4233219969,
+    "t": -0.694269896,
+    "valor-p": 0.4875223094,
+    "Coef. estandarizado": -0.0030626958,
+    "Significativo": "No"
+   },
+   {
+    "Variable": "pisos",
+    "Coeficiente": 12801.2891302796,
+    "Error estándar": 3641.3552738936,
+    "t": 3.5155287434,
+    "valor-p": 0.0004400044,
+    "Coef. estandarizado": 0.0187721375,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "frente_agua",
+    "Coeficiente": 632704.8774586052,
+    "Error estándar": 19964.2815520852,
+    "t": 31.6918430452,
+    "valor-p": 2.661057507e-214,
+    "Coef. estandarizado": 0.1453434657,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "vista",
+    "Coeficiente": 46615.3273923425,
+    "Error estándar": 2389.6468374513,
+    "t": 19.5072036009,
+    "valor-p": 7.6154708e-84,
+    "Coef. estandarizado": 0.0959355456,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "condicion",
+    "Coeficiente": 30471.2875714742,
+    "Error estándar": 2631.9465126052,
+    "t": 11.5774721962,
+    "valor-p": 6.970872913e-31,
+    "Coef. estandarizado": 0.0538500216,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "calidad",
+    "Coeficiente": 98478.2783327003,
+    "Error estándar": 2414.5765309509,
+    "t": 40.7849066163,
+    "valor-p": 0.0,
+    "Coef. estandarizado": 0.3143917147,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "antiguedad",
+    "Coeficiente": 2474.5826643767,
+    "Error estándar": 81.4209664218,
+    "t": 30.3924501652,
+    "valor-p": 1.079873762e-197,
+    "Coef. estandarizado": 0.1977586317,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "renovada",
+    "Coeficiente": 48765.1955784227,
+    "Error estándar": 8291.1102715821,
+    "t": 5.8816242917,
+    "valor-p": 4.1e-09,
+    "Coef. estandarizado": 0.0265380624,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "latitud",
+    "Coeficiente": 556442.0732904525,
+    "Error estándar": 11711.1675646778,
+    "t": 47.5137999877,
+    "valor-p": 0.0,
+    "Coef. estandarizado": 0.2098602527,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "longitud",
+    "Coeficiente": -103135.7593328074,
+    "Error estándar": 13142.5106677074,
+    "t": -7.8474929137,
+    "valor-p": 0.0,
+    "Coef. estandarizado": -0.0394762591,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "superficie_vecinos_m2",
+    "Coeficiente": 346.4678927535,
+    "Error estándar": 41.4491577452,
+    "t": 8.3588644885,
+    "valor-p": 6.808770021e-17,
+    "Coef. estandarizado": 0.0602995125,
+    "Significativo": "Sí"
+   },
+   {
+    "Variable": "meses_desde_inicio",
+    "Coeficiente": 3662.2177499831,
+    "Error estándar": 415.7656246624,
+    "t": 8.8083707088,
+    "valor-p": 1.388181544e-18,
+    "Coef. estandarizado": 0.0371503253,
+    "Significativo": "Sí"
+   }
+  ],
+  "metricas": [
+   {
+    "Conjunto": "Entrenamiento",
+    "R²": 0.6949311581,
+    "MSE": 41191664965.36072,
+    "RMSE": 202957.2983791436,
+    "MAE": 126396.337035544
+   },
+   {
+    "Conjunto": "Prueba",
+    "R²": 0.7019080432,
+    "MSE": 39894759004.78587,
+    "RMSE": 199736.7242266326,
+    "MAE": 124741.6796895032
+   }
+  ],
+  "breusch_pagan_p": 0.0
+ },
+ "anova": [
+  {
+   "Factor": "Calidad de construcción",
+   "Grupos": 5,
+   "gl entre": 4,
+   "gl dentro": 21591,
+   "F": 4314.9555851955,
+   "valor-p": 0.0,
+   "eta²": 0.4442588677,
+   "Levene p": 0.0,
+   "Kruskal-Wallis p": 0.0
+  },
+  {
+   "Factor": "Vista",
+   "Grupos": 5,
+   "gl entre": 4,
+   "gl dentro": 21591,
+   "F": 1091.9949945946,
+   "valor-p": 0.0,
+   "eta²": 0.1682647,
+   "Levene p": 0.0,
+   "Kruskal-Wallis p": 0.0
+  },
+  {
+   "Factor": "Condición",
+   "Grupos": 5,
+   "gl entre": 4,
+   "gl dentro": 21591,
+   "F": 36.8545880201,
+   "valor-p": 9.28450256e-31,
+   "eta²": 0.0067814663,
+   "Levene p": 1e-10,
+   "Kruskal-Wallis p": 4.548363377e-54
+  },
+  {
+   "Factor": "Frente al agua",
+   "Grupos": 2,
+   "gl entre": 1,
+   "gl dentro": 21594,
+   "F": 1650.0845139432,
+   "valor-p": 0.0,
+   "eta²": 0.0709894388,
+   "Levene p": 5.286357907e-169,
+   "Kruskal-Wallis p": 3.339166376e-64
+  }
+ ],
+ "correlaciones": [
+  {
+   "Variable": "superficie_m2",
+   "r de Pearson": 0.701920857,
+   "r²": 0.4926928894,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.6440267987
+  },
+  {
+   "Variable": "calidad",
+   "r de Pearson": 0.6679352149,
+   "r²": 0.4461374513,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.6581934134
+  },
+  {
+   "Variable": "superficie_vecinos_m2",
+   "r de Pearson": 0.5852726763,
+   "r²": 0.3425441056,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.5723415829
+  },
+  {
+   "Variable": "banos",
+   "r de Pearson": 0.5259146495,
+   "r²": 0.2765862186,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.4973348297
+  },
+  {
+   "Variable": "vista",
+   "r de Pearson": 0.3973231257,
+   "r²": 0.1578656662,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.2939242653
+  },
+  {
+   "Variable": "habitaciones",
+   "r de Pearson": 0.3159664954,
+   "r²": 0.0998348262,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.3442014363
+  },
+  {
+   "Variable": "latitud",
+   "r de Pearson": 0.3067720532,
+   "r²": 0.0941090926,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.4561302553
+  },
+  {
+   "Variable": "frente_agua",
+   "r de Pearson": 0.2664384333,
+   "r²": 0.0709894388,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.1151228208
+  },
+  {
+   "Variable": "pisos",
+   "r de Pearson": 0.2568307939,
+   "r²": 0.0659620567,
+   "valor-p": 2.27e-322,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.3225294201
+  },
+  {
+   "Variable": "renovada",
+   "r de Pearson": 0.1260760504,
+   "r²": 0.0158951705,
+   "valor-p": 3.165900248e-77,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.1009887623
+  },
+  {
+   "Variable": "terreno_m2",
+   "r de Pearson": 0.0898848052,
+   "r²": 0.0080792782,
+   "valor-p": 5.500689079e-40,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.0751010953
+  },
+  {
+   "Variable": "antiguedad",
+   "r de Pearson": -0.0539366161,
+   "r²": 0.0029091586,
+   "valor-p": 0.0,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": -0.1019699752
+  },
+  {
+   "Variable": "condicion",
+   "r de Pearson": 0.0359995983,
+   "r²": 0.0012959711,
+   "valor-p": 1.211e-07,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.0179146206
+  },
+  {
+   "Variable": "longitud",
+   "r de Pearson": 0.0221028752,
+   "r²": 0.0004885371,
+   "valor-p": 0.0011607478,
+   "Significativa (p < 0.05)": "Sí",
+   "rho de Spearman": 0.0640997798
+  },
+  {
+   "Variable": "meses_desde_inicio",
+   "r de Pearson": -0.0026675838,
+   "r²": 7.116e-06,
+   "valor-p": 0.6950620148,
+   "Significativa (p < 0.05)": "No",
+   "rho de Spearman": -0.0083047271
+  }
+ ],
+ "pearson_matriz": {
+  "precio": {
+   "precio": 1.0,
+   "superficie_m2": 0.7019,
+   "calidad": 0.6679,
+   "superficie_vecinos_m2": 0.5853,
+   "banos": 0.5259,
+   "vista": 0.3973,
+   "habitaciones": 0.316,
+   "latitud": 0.3068,
+   "frente_agua": 0.2664,
+   "pisos": 0.2568,
+   "renovada": 0.1261,
+   "terreno_m2": 0.0899,
+   "condicion": 0.036,
+   "longitud": 0.0221,
+   "antiguedad": -0.0539,
+   "meses_desde_inicio": -0.0027
+  },
+  "superficie_m2": {
+   "precio": 0.7019,
+   "superficie_m2": 1.0,
+   "calidad": 0.7628,
+   "superficie_vecinos_m2": 0.7564,
+   "banos": 0.7558,
+   "vista": 0.2847,
+   "habitaciones": 0.5932,
+   "latitud": 0.0522,
+   "frente_agua": 0.1039,
+   "pisos": 0.3539,
+   "renovada": 0.055,
+   "terreno_m2": 0.1734,
+   "condicion": -0.0594,
+   "longitud": 0.2412,
+   "antiguedad": -0.3186,
+   "meses_desde_inicio": -0.0336
+  },
+  "calidad": {
+   "precio": 0.6679,
+   "superficie_m2": 0.7628,
+   "calidad": 1.0,
+   "superficie_vecinos_m2": 0.7139,
+   "banos": 0.6658,
+   "vista": 0.2517,
+   "habitaciones": 0.3662,
+   "latitud": 0.1136,
+   "frente_agua": 0.0829,
+   "pisos": 0.4588,
+   "renovada": 0.0138,
+   "terreno_m2": 0.1147,
+   "condicion": -0.1469,
+   "longitud": 0.2003,
+   "antiguedad": -0.4483,
+   "meses_desde_inicio": -0.0387
+  },
+  "superficie_vecinos_m2": {
+   "precio": 0.5853,
+   "superficie_m2": 0.7564,
+   "calidad": 0.7139,
+   "superficie_vecinos_m2": 1.0,
+   "banos": 0.5699,
+   "vista": 0.2807,
+   "habitaciones": 0.4045,
+   "latitud": 0.0487,
+   "frente_agua": 0.0865,
+   "pisos": 0.2801,
+   "renovada": -0.0028,
+   "terreno_m2": 0.1448,
+   "condicion": -0.093,
+   "longitud": 0.3356,
+   "antiguedad": -0.3267,
+   "meses_desde_inicio": -0.0305
+  },
+  "banos": {
+   "precio": 0.5259,
+   "superficie_m2": 0.7558,
+   "calidad": 0.6658,
+   "superficie_vecinos_m2": 0.5699,
+   "banos": 1.0,
+   "vista": 0.1884,
+   "habitaciones": 0.5279,
+   "latitud": 0.0243,
+   "frente_agua": 0.0637,
+   "pisos": 0.5026,
+   "renovada": 0.0501,
+   "terreno_m2": 0.0884,
+   "condicion": -0.1264,
+   "longitud": 0.2249,
+   "antiguedad": -0.5076,
+   "meses_desde_inicio": -0.0338
+  },
+  "vista": {
+   "precio": 0.3973,
+   "superficie_m2": 0.2847,
+   "calidad": 0.2517,
+   "superficie_vecinos_m2": 0.2807,
+   "banos": 0.1884,
+   "vista": 1.0,
+   "habitaciones": 0.0824,
+   "latitud": 0.0059,
+   "frente_agua": 0.402,
+   "pisos": 0.0288,
+   "renovada": 0.1041,
+   "terreno_m2": 0.0749,
+   "condicion": 0.046,
+   "longitud": -0.0781,
+   "antiguedad": 0.0537,
+   "meses_desde_inicio": -0.0026
+  },
+  "habitaciones": {
+   "precio": 0.316,
+   "superficie_m2": 0.5932,
+   "calidad": 0.3662,
+   "superficie_vecinos_m2": 0.4045,
+   "banos": 0.5279,
+   "vista": 0.0824,
+   "habitaciones": 1.0,
+   "latitud": -0.0116,
+   "frente_agua": -0.0069,
+   "pisos": 0.1837,
+   "renovada": 0.0189,
+   "terreno_m2": 0.0336,
+   "condicion": 0.0234,
+   "longitud": 0.1366,
+   "antiguedad": -0.1609,
+   "meses_desde_inicio": -0.0145
+  },
+  "latitud": {
+   "precio": 0.3068,
+   "superficie_m2": 0.0522,
+   "calidad": 0.1136,
+   "superficie_vecinos_m2": 0.0487,
+   "banos": 0.0243,
+   "vista": 0.0059,
+   "habitaciones": -0.0116,
+   "latitud": 1.0,
+   "frente_agua": -0.0143,
+   "pisos": 0.0493,
+   "renovada": 0.0293,
+   "terreno_m2": -0.0855,
+   "condicion": -0.0152,
+   "longitud": -0.1353,
+   "antiguedad": 0.1479,
+   "meses_desde_inicio": -0.0311
+  },
+  "frente_agua": {
+   "precio": 0.2664,
+   "superficie_m2": 0.1039,
+   "calidad": 0.0829,
+   "superficie_vecinos_m2": 0.0865,
+   "banos": 0.0637,
+   "vista": 0.402,
+   "habitaciones": -0.0069,
+   "latitud": -0.0143,
+   "frente_agua": 1.0,
+   "pisos": 0.0238,
+   "renovada": 0.0933,
+   "terreno_m2": 0.0216,
+   "condicion": 0.0166,
+   "longitud": -0.0419,
+   "antiguedad": 0.0261,
+   "meses_desde_inicio": 0.0005
+  },
+  "pisos": {
+   "precio": 0.2568,
+   "superficie_m2": 0.3539,
+   "calidad": 0.4588,
+   "superficie_vecinos_m2": 0.2801,
+   "banos": 0.5026,
+   "vista": 0.0288,
+   "habitaciones": 0.1837,
+   "latitud": 0.0493,
+   "frente_agua": 0.0238,
+   "pisos": 1.0,
+   "renovada": 0.0063,
+   "terreno_m2": -0.0048,
+   "condicion": -0.264,
+   "longitud": 0.1259,
+   "antiguedad": -0.4895,
+   "meses_desde_inicio": -0.0218
+  },
+  "renovada": {
+   "precio": 0.1261,
+   "superficie_m2": 0.055,
+   "calidad": 0.0138,
+   "superficie_vecinos_m2": -0.0028,
+   "banos": 0.0501,
+   "vista": 0.1041,
+   "habitaciones": 0.0189,
+   "latitud": 0.0293,
+   "frente_agua": 0.0933,
+   "pisos": 0.0063,
+   "renovada": 1.0,
+   "terreno_m2": 0.0078,
+   "condicion": -0.0603,
+   "longitud": -0.0683,
+   "antiguedad": 0.2248,
+   "meses_desde_inicio": -0.025
+  },
+  "terreno_m2": {
+   "precio": 0.0899,
+   "superficie_m2": 0.1734,
+   "calidad": 0.1147,
+   "superficie_vecinos_m2": 0.1448,
+   "banos": 0.0884,
+   "vista": 0.0749,
+   "habitaciones": 0.0336,
+   "latitud": -0.0855,
+   "frente_agua": 0.0216,
+   "pisos": -0.0048,
+   "renovada": 0.0078,
+   "terreno_m2": 1.0,
+   "condicion": -0.0088,
+   "longitud": 0.2302,
+   "antiguedad": -0.0529,
+   "meses_desde_inicio": 0.0063
+  },
+  "condicion": {
+   "precio": 0.036,
+   "superficie_m2": -0.0594,
+   "calidad": -0.1469,
+   "superficie_vecinos_m2": -0.093,
+   "banos": -0.1264,
+   "vista": 0.046,
+   "habitaciones": 0.0234,
+   "latitud": -0.0152,
+   "frente_agua": 0.0166,
+   "pisos": -0.264,
+   "renovada": -0.0603,
+   "terreno_m2": -0.0088,
+   "condicion": 1.0,
+   "longitud": -0.1058,
+   "antiguedad": 0.3608,
+   "meses_desde_inicio": -0.0504
+  },
+  "longitud": {
+   "precio": 0.0221,
+   "superficie_m2": 0.2412,
+   "calidad": 0.2003,
+   "superficie_vecinos_m2": 0.3356,
+   "banos": 0.2249,
+   "vista": -0.0781,
+   "habitaciones": 0.1366,
+   "latitud": -0.1353,
+   "frente_agua": -0.0419,
+   "pisos": 0.1259,
+   "renovada": -0.0683,
+   "terreno_m2": 0.2302,
+   "condicion": -0.1058,
+   "longitud": 1.0,
+   "antiguedad": -0.41,
+   "meses_desde_inicio": -0.0066
+  },
+  "antiguedad": {
+   "precio": -0.0539,
+   "superficie_m2": -0.3186,
+   "calidad": -0.4483,
+   "superficie_vecinos_m2": -0.3267,
+   "banos": -0.5076,
+   "vista": 0.0537,
+   "habitaciones": -0.1609,
+   "latitud": 0.1479,
+   "frente_agua": 0.0261,
+   "pisos": -0.4895,
+   "renovada": 0.2248,
+   "terreno_m2": -0.0529,
+   "condicion": 0.3608,
+   "longitud": -0.41,
+   "antiguedad": 1.0,
+   "meses_desde_inicio": 0.0134
+  },
+  "meses_desde_inicio": {
+   "precio": -0.0027,
+   "superficie_m2": -0.0336,
+   "calidad": -0.0387,
+   "superficie_vecinos_m2": -0.0305,
+   "banos": -0.0338,
+   "vista": -0.0026,
+   "habitaciones": -0.0145,
+   "latitud": -0.0311,
+   "frente_agua": 0.0005,
+   "pisos": -0.0218,
+   "renovada": -0.025,
+   "terreno_m2": 0.0063,
+   "condicion": -0.0504,
+   "longitud": -0.0066,
+   "antiguedad": 0.0134,
+   "meses_desde_inicio": 1.0
+  }
+ },
+ "descriptivos": [
+  {
+   "Variable": "precio",
+   "Media": 540198.2986664197,
+   "Mediana": 450000.0,
+   "Moda": 350000.0,
+   "Varianza": 134792956735.30261,
+   "Desviación estándar": 367141.6031115278,
+   "Mínimo": 78000.0,
+   "Máximo": 7700000.0,
+   "Rango": 7622000.0,
+   "Asimetría": 4.025670312
+  },
+  {
+   "Variable": "superficie_m2",
+   "Media": 193.2701537322,
+   "Mediana": 177.44,
+   "Moda": 120.77,
+   "Varianza": 7275.4600543686,
+   "Desviación estándar": 85.29630739,
+   "Mínimo": 34.37,
+   "Máximo": 1257.91,
+   "Rango": 1223.54,
+   "Asimetría": 1.4731407563
+  },
+  {
+   "Variable": "terreno_m2",
+   "Media": 1402.819534636,
+   "Mediana": 707.83,
+   "Moda": 464.52,
+   "Varianza": 14802817.249441817,
+   "Desviación estándar": 3847.442949472,
+   "Mínimo": 48.31,
+   "Máximo": 153416.21,
+   "Rango": 153367.9,
+   "Asimetría": 13.0723150417
+  },
+  {
+   "Variable": "habitaciones",
+   "Media": 3.3718281163,
+   "Mediana": 3.0,
+   "Moda": 3.0,
+   "Varianza": 0.8174216358,
+   "Desviación estándar": 0.9041137295,
+   "Mínimo": 1.0,
+   "Máximo": 11.0,
+   "Rango": 10.0,
+   "Asimetría": 0.5513819025
+  },
+  {
+   "Variable": "banos",
+   "Media": 2.1158432117,
+   "Mediana": 2.25,
+   "Moda": 2.5,
+   "Varianza": 0.591358034,
+   "Desviación estándar": 0.7689980715,
+   "Mínimo": 0.5,
+   "Máximo": 8.0,
+   "Rango": 7.5,
+   "Asimetría": 0.5196443164
+  },
+  {
+   "Variable": "pisos",
+   "Media": 1.4941192813,
+   "Mediana": 1.5,
+   "Moda": 1.0,
+   "Varianza": 0.2912596966,
+   "Desviación estándar": 0.5396848123,
+   "Mínimo": 1.0,
+   "Máximo": 3.5,
+   "Rango": 2.5,
+   "Asimetría": 0.6144268757
+  },
+  {
+   "Variable": "calidad",
+   "Media": 7.6579459159,
+   "Mediana": 7.0,
+   "Moda": 7.0,
+   "Varianza": 1.3764411429,
+   "Desviación estándar": 1.1732182844,
+   "Mínimo": 3.0,
+   "Máximo": 13.0,
+   "Rango": 10.0,
+   "Asimetría": 0.7881658676
+  },
+  {
+   "Variable": "condicion",
+   "Media": 3.4097518059,
+   "Mediana": 3.0,
+   "Moda": 3.0,
+   "Varianza": 0.4231121218,
+   "Desviación estándar": 0.6504706925,
+   "Mínimo": 1.0,
+   "Máximo": 5.0,
+   "Rango": 4.0,
+   "Asimetría": 1.0361065797
+  },
+  {
+   "Variable": "vista",
+   "Media": 0.2343026486,
+   "Mediana": 0.0,
+   "Moda": 0.0,
+   "Varianza": 0.5873780319,
+   "Desviación estándar": 0.7664059185,
+   "Mínimo": 0.0,
+   "Máximo": 4.0,
+   "Rango": 4.0,
+   "Asimetría": 3.3961381632
+  },
+  {
+   "Variable": "antiguedad",
+   "Media": 43.3227449528,
+   "Mediana": 40.0,
+   "Moda": 9.0,
+   "Varianza": 862.9901582625,
+   "Desviación estándar": 29.3766941343,
+   "Mínimo": 0.0,
+   "Máximo": 115.0,
+   "Rango": 115.0,
+   "Asimetría": 0.4690035631
+  },
+  {
+   "Variable": "superficie_vecinos_m2",
+   "Media": 184.5658126505,
+   "Mediana": 170.94,
+   "Moda": 143.07,
+   "Varianza": 4052.6099478878,
+   "Desviación estándar": 63.6601126914,
+   "Mínimo": 37.07,
+   "Máximo": 576.93,
+   "Rango": 539.86,
+   "Asimetría": 1.1068261558
+  },
+  {
+   "Variable": "precio_m2",
+   "Media": 2842.8596646608,
+   "Mediana": 2633.1189573137,
+   "Moda": 2562.7883136853,
+   "Varianza": 1400890.0137269427,
+   "Desviación estándar": 1183.5919963091,
+   "Mínimo": 942.7630745853,
+   "Máximo": 8719.8525014949,
+   "Rango": 7777.0894269096,
+   "Asimetría": 1.2467064658
+  }
+ ],
+ "error_por_rango": [
+  {
+   "rango": "< 300 mil",
+   "casas": 925,
+   "MAE": 39694.1823574174,
+   "MAPE": 19.1291429273,
+   "mediana_error_pct": 10.5899690672
+  },
+  {
+   "rango": "300 a 500 mil",
+   "casas": 1588,
+   "MAE": 45042.6890940641,
+   "MAPE": 11.2776674247,
+   "mediana_error_pct": 8.3041310657
+  },
+  {
+   "rango": "500 a 750 mil",
+   "casas": 1076,
+   "MAE": 65152.128197938,
+   "MAPE": 10.6844223838,
+   "mediana_error_pct": 8.4871569023
+  },
+  {
+   "rango": "750 mil a 1 millón",
+   "casas": 441,
+   "MAE": 100814.360370173,
+   "MAPE": 11.676538427,
+   "mediana_error_pct": 8.3183964306
+  },
+  {
+   "rango": "> 1 millón",
+   "casas": 288,
+   "MAE": 236508.2193503927,
+   "MAPE": 14.8227983664,
+   "mediana_error_pct": 13.0723889589
+  }
+ ],
+ "importancias": [
+  {
+   "Variable": "latitud",
+   "Caída de R²": 0.2995822012,
+   "Desv.": 0.0123932716
+  },
+  {
+   "Variable": "superficie_m2",
+   "Caída de R²": 0.2309322175,
+   "Desv.": 0.0059621995
+  },
+  {
+   "Variable": "calidad",
+   "Caída de R²": 0.2221968893,
+   "Desv.": 0.0131995144
+  },
+  {
+   "Variable": "longitud",
+   "Caída de R²": 0.1096649034,
+   "Desv.": 0.0072552997
+  },
+  {
+   "Variable": "frente_agua",
+   "Caída de R²": 0.0336558354,
+   "Desv.": 0.0029808842
+  },
+  {
+   "Variable": "antiguedad",
+   "Caída de R²": 0.0314964777,
+   "Desv.": 0.0022506731
+  },
+  {
+   "Variable": "codigo_postal",
+   "Caída de R²": 0.021039328,
+   "Desv.": 0.0010933924
+  },
+  {
+   "Variable": "terreno_m2",
+   "Caída de R²": 0.0158498654,
+   "Desv.": 0.0017783346
+  },
+  {
+   "Variable": "vista",
+   "Caída de R²": 0.0152527067,
+   "Desv.": 0.0011726483
+  },
+  {
+   "Variable": "superficie_vecinos_m2",
+   "Caída de R²": 0.0150062386,
+   "Desv.": 0.0040205776
+  },
+  {
+   "Variable": "banos",
+   "Caída de R²": 0.0048260384,
+   "Desv.": 0.0008426545
+  },
+  {
+   "Variable": "condicion",
+   "Caída de R²": 0.0043625301,
+   "Desv.": 0.0005663437
+  },
+  {
+   "Variable": "meses_desde_inicio",
+   "Caída de R²": 0.0029320073,
+   "Desv.": 0.0013338189
+  },
+  {
+   "Variable": "pisos",
+   "Caída de R²": 0.0004384509,
+   "Desv.": 0.0003175235
+  },
+  {
+   "Variable": "habitaciones",
+   "Caída de R²": -0.0006572586,
+   "Desv.": 0.0004035795
+  },
+  {
+   "Variable": "renovada",
+   "Caída de R²": -0.0037791667,
+   "Desv.": 0.0004424055
+  }
+ ],
+ "variables_numericas": [
+  "habitaciones",
+  "banos",
+  "superficie_m2",
+  "terreno_m2",
+  "pisos",
+  "frente_agua",
+  "vista",
+  "condicion",
+  "calidad",
+  "antiguedad",
+  "renovada",
+  "latitud",
+  "longitud",
+  "superficie_vecinos_m2",
+  "meses_desde_inicio"
+ ]
+}
