@@ -57,6 +57,46 @@ header[data-testid="stHeader"], [data-testid="stToolbar"], [data-testid="stDecor
 .st-key-encabezado [data-testid="stRadioOption"][data-selected="true"] p {color: #0E4F5C; font-weight: 600;}
 div[data-testid="stElementContainer"]:has(style) {display: none;}
 
+/* Tema claro forzado: no depende de .streamlit/config.toml ni del modo oscuro del navegador */
+:root, .stApp {color-scheme: light !important;}
+html, body, .stApp, [data-testid="stApp"], [data-testid="stAppViewContainer"], [data-testid="stMain"],
+[data-testid="stMainBlockContainer"], [data-testid="stHeader"], section.main {background-color: #F5F3EE !important;}
+.stApp, .stApp [data-testid="stMarkdownContainer"], .stApp [data-testid="stWidgetLabel"], .stApp label,
+.stApp [data-testid="stMarkdownContainer"] p, .stApp [data-testid="stMarkdownContainer"] li,
+.stApp [data-testid="stRadio"] p, .stApp [data-testid="stSelectbox"] div, .stApp [data-testid="stMultiSelect"] div {color: #1C2B33;}
+.campo span:last-child {color: #1C2B33 !important;}
+/* Campos de captura y listas desplegables */
+[data-baseweb="select"] > div, [data-baseweb="input"], [data-baseweb="input"] > div, [data-baseweb="base-input"],
+.stApp input, .stApp textarea, [data-testid="stNumberInputContainer"] {
+    background-color: #FFFFFF !important; color: #1C2B33 !important; -webkit-text-fill-color: #1C2B33 !important;
+    border-color: #D6D0C4 !important;}
+[data-baseweb="select"] div, .stSelectbox [role="group"], .stMultiSelect [role="group"],
+.stSelectbox [role="group"] button, .stMultiSelect [role="group"] button {background-color: #FFFFFF !important;
+    color: #1C2B33 !important; border-color: #D6D0C4 !important;}
+.stSelectbox [role="group"] svg, .stMultiSelect [role="group"] svg {color: #56656D !important; fill: #56656D !important;}
+[data-baseweb="select"] svg {fill: #56656D !important; color: #56656D !important;}
+[data-baseweb="popover"], [data-baseweb="popover"] > div, [data-baseweb="menu"], [data-baseweb="popover"] ul,
+[data-baseweb="popover"] li, [role="listbox"], [role="option"] {background-color: #FFFFFF !important; color: #1C2B33 !important;}
+[role="option"]:hover, [role="option"][aria-selected="true"] {background-color: #EEF4F4 !important;}
+[data-baseweb="select"] [data-baseweb="tag"], [data-baseweb="tag"] {background-color: #0E4F5C !important;}
+[data-baseweb="tag"] div, [data-baseweb="tag"] span {background-color: transparent !important; color: #FFFFFF !important;}
+[data-baseweb="tag"] span {color: #FFFFFF !important;}
+/* Sliders y radios */
+[data-testid="stSlider"] [role="slider"] {background-color: #0E4F5C !important; border-color: #0E4F5C !important;}
+[data-testid="stSliderThumbValue"], [data-testid="stSliderTickBarMin"], [data-testid="stSliderTickBarMax"] {color: #1C2B33 !important;}
+[data-testid="stRadio"] label div:first-child {border-color: #56656D;}
+/* Botones */
+.stButton button, .stDownloadButton button {background-color: #FFFFFF !important; color: #1C2B33 !important;
+    border: 1px solid #C9C2B4 !important;}
+.stButton button p, .stDownloadButton button p {color: #1C2B33 !important;}
+.stFormSubmitButton button {background-color: #0E4F5C !important; border-color: #0E4F5C !important;}
+.stFormSubmitButton button, .stFormSubmitButton button p {color: #FFFFFF !important;}
+[data-testid="stForm"] {background-color: #FFFFFF !important;}
+/* Elementos con fondo oscuro propio: texto claro */
+.cifra.destacada .valor, .marca .logo {color: #FFFFFF !important;}
+.cifra.destacada .rotulo, .cifra.destacada .detalle, .cifra.destacada span {color: #CFE2E5 !important;}
+.cifra.destacada .valor {color: #FFFFFF !important;}
+
 /* Texto */
 div[data-testid="stMarkdownContainer"] .titulo {padding: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; color: #1C2B33;
          margin: 16px 0 6px;}
@@ -470,7 +510,23 @@ elif seccion == 'Datos':
             st.altair_chart(base_grafica(linea, 260), width='stretch', theme=None)
 
         html('<h2 class="seccion" style="margin-top: 36px">Muestra de registros</h2>')
-        st.dataframe(filtro.drop(columns=['precio_m2']).head(200), hide_index=True, width='stretch')
+        muestra = filtro.drop(columns=['precio_m2', 'id']).head(30).copy()
+        muestra['fecha_venta'] = muestra['fecha_venta'].dt.strftime('%Y-%m-%d')
+        muestra = muestra.rename(columns={'fecha_venta': 'Fecha', 'precio': 'Precio', 'habitaciones': 'Hab.',
+                                          'banos': 'Baños', 'superficie_m2': 'm²', 'terreno_m2': 'Terreno m²',
+                                          'pisos': 'Pisos', 'frente_agua': 'Agua', 'vista': 'Vista',
+                                          'condicion': 'Cond.', 'calidad': 'Calidad', 'antiguedad': 'Antig.',
+                                          'renovada': 'Renov.', 'latitud': 'Lat.', 'longitud': 'Long.',
+                                          'codigo_postal': 'C.P.', 'superficie_vecinos_m2': 'Vecinos m²',
+                                          'meses_desde_inicio': 'Mes'})
+        num_cols = [c for c in muestra.columns if c not in ('Fecha', 'C.P.')]
+        tabla_html(muestra, formatos={'Precio': lambda x: f'{x:,.0f}', 'm²': lambda x: f'{x:,.0f}',
+                                      'Terreno m²': lambda x: f'{x:,.0f}', 'Vecinos m²': lambda x: f'{x:,.0f}',
+                                      'Baños': lambda x: f'{x:g}', 'Pisos': lambda x: f'{x:g}',
+                                      'Lat.': lambda x: f'{x:.4f}', 'Long.': lambda x: f'{x:.4f}'},
+                   der=num_cols)
+        html(f'<p class="nota">Primeras 30 de {len(filtro):,} ventas con los filtros elegidos. '
+             'El botón descarga todas.</p>')
         st.download_button('Descargar datos filtrados (CSV)', filtro.to_csv(index=False).encode('utf-8'),
                            'datos_casas_filtrados.csv', 'text/csv')
 
